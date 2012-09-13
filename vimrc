@@ -22,7 +22,7 @@ Bundle "Soares/rainbow.vim"
 Bundle "vim-scripts/OmniCppComplete"
 Bundle "vim-scripts/ShowMarks"
 Bundle "tpope/vim-surround"
-Bundle "vim-colors-solarized"
+Bundle "altercation/vim-colors-solarized"
 Bundle "vim-scripts/taglist.vim"
 Bundle "scrooloose/nerdcommenter"
 Bundle "vim-scripts/SearchComplete"
@@ -38,6 +38,8 @@ Bundle "myusuf3/numbers.vim"
 Bundle "xolox/vim-lua-inspect"
 Bundle "vim-scripts/vimwiki"
 Bundle "gerw/vim-latex-suite"
+Bundle "Lokaltog/vim-powerline"
+Bundle "benmills/vimux"
 
 filetype plugin indent on     " required!
 
@@ -82,6 +84,9 @@ func! WordProcessorMode()
     setlocal linebreak 
 endfu 
 com! WP call WordProcessorMode()
+
+"For vim-powerline
+let g:Powerline_symbols = 'fancy'
 
 
 "Sintax!!
