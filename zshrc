@@ -31,6 +31,8 @@ ZSH_THEME="jupbarrera"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
+[ -z "$TMUX" ] && export TERM=xterm-256color
+
 export EDITOR="vim"
 bindkey -v 
 

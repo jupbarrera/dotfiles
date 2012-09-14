@@ -68,9 +68,6 @@ set spelllang=es,en
 "muestra X sugerencias, por defecto son 5.
 set spellsuggest=5
 
-"Font
-set guifont=dejavusansmono
-
 "Formating Text
 func! WordProcessorMode() 
     setlocal formatoptions=1 
@@ -86,8 +83,7 @@ endfu
 com! WP call WordProcessorMode()
 
 "For vim-powerline
-let g:Powerline_symbols = 'fancy'
-
+"let g:Powerline_symbols = 'fancy'
 
 "Sintax!!
 syntax on
