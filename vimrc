@@ -103,15 +103,13 @@ filetype plugin on
 filetype plugin indent on
 
 "Latex-Suite
-
 set grepprg=grep\ -nH\ $*
 
-" OPCIONAL: Arrancando con Vim 7, el tipo de fichero de ficheros .tex vacíos es por defecto 'plaintex' en vez de 'tex', esto resulta en que vim-latex no sea cargado.
-" Lo siguiente cambia el tipo de fichero por defecto a 'tex':
-
+"Algunas configuraciones para LaTex
 let g:tex_flavor='latex'
 let g:Tex_ViewRule_pdf='evince'
 let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_MultipleCompileFormats='pdf, aux' 
 
 let mapleader = ","
 
@@ -178,5 +176,7 @@ let publicWiki = {}
 let publicWiki.path = '~/src/doc/jupbarrerastuff/publicWiki/'
 let publicWiki.path_html = '~/Dropbox/publicwiki/'
 let publicWiki.index = 'index'
+let publicWiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
 
 let g:vimwiki_list = [bitacora, publicWiki]
+
