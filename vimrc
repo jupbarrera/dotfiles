@@ -37,6 +37,7 @@ Bundle "vim-scripts/DoxygenToolkit.vim"
 Bundle "myusuf3/numbers.vim"
 Bundle "xolox/vim-lua-inspect"
 Bundle "vim-scripts/vimwiki"
+Bundle "thanthese/Tortoise-Typing"
 Bundle "gerw/vim-latex-suite"
 Bundle "Lokaltog/vim-powerline"
 Bundle "benmills/vimux"
@@ -44,6 +45,10 @@ Bundle "benmills/vimux"
 filetype plugin indent on     " required!
 
 " NOTE: comments after Bundle command are not allowed..
+
+" Remapping Esc key!!
+
+:imap jk <Esc>
 
 "Some config
 set history=50          " keep 50 lines of command line history
@@ -110,6 +115,7 @@ let g:tex_flavor='latex'
 let g:Tex_ViewRule_pdf='evince'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='pdf, aux' 
+let g:Imap_FreezeImap=1
 
 let mapleader = ","
 
