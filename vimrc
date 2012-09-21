@@ -87,8 +87,8 @@ func! WordProcessorMode()
 endfu 
 com! WP call WordProcessorMode()
 
-"For vim-powerline
-"let g:Powerline_symbols = 'fancy'
+"For vim-powerline 
+let g:Powerline_symbols = 'fancy'
 
 "Sintax!!
 syntax on
