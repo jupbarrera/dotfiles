@@ -147,3 +147,7 @@ extr () {
 }
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export PATH="/opt/microchip/xc8/v1.12/bin":$PATH
+
+export PATH="/opt/microchip/xc16/v1.10/bin":$PATH

@@ -44,8 +44,25 @@ bindkey '^N' history-search-forward
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=/home/jupbarrera/bin:/home/jupbarrera/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/jupbarrera/bin/:/usr/local/MATLAB/R2011b/bin:/usr/local/Trolltech/Qt-4.8.1/bin:/home/jupbarrera/android-sdk-linux_x86/platform-tools
+# Alias for rake to work correctly
+alias rake='noglob rake'
 
-
+PATH=$PATH:/usr/local/MATLAB/R2011b/bin # Add matlab to path
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:/usr/share/pk2 # add pk2 to path for PIC
+PATH=$PATH:/usr/java/lib/i386/client # add java home
+PATH=$PATH:/opt/microchip/xc16/v1.10/bin #gcc-xc16 compiler for pic 16 bits
+PATH=$PATH:$HOME/bin/arduino-1.0.2 # arduino home
+PATH=$PATH:$HOME/bin/choregraphe-1.12.3 #choregraphe home
+PATH=$PATH:$HOME/bin/fritzing-0.7.1b #fritzing home
+PATH=$PATH:/usr/local/Trolltech/Qt-4.8.1/bin #QT home
+PATH=$PATH:/usr/lib/lightdm/lightdm #don't know what is?
+
+#Set PATH!!
+export PATH=${PATH}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+
+PYTHONPATH=$PYTHONPATH:$HOME/pro/python/pynaoqi/ #NAO python path 
+
+#set PYTHONPATH
+export PYTHONPATH=${PYTHONPATH}
+

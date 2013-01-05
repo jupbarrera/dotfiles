@@ -41,13 +41,15 @@ Bundle "thanthese/Tortoise-Typing"
 Bundle "gerw/vim-latex-suite"
 Bundle "Lokaltog/vim-powerline"
 Bundle "benmills/vimux"
+Bundle "vim-scripts/TwitVim"
+Bundle "gitorious.org/vim-for-qt-kde/vim-qmake.git"
+Bundle "vim-scripts/Arduino-syntax-file"
 
 filetype plugin indent on     " required!
 
 " NOTE: comments after Bundle command are not allowed..
 
 " Remapping Esc key!!
-
 :imap jk <Esc>
 
 "Some config
@@ -138,7 +140,6 @@ set tags+=./tags "Etiquetas generadas en el directorio actual
 " set tags+=~/.vim/tags/gl
 
 " build tags of your own project with CTRL+F12     
-"map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>     
 noremap <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<cr>     
 inoremap <F12> <Esc>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<cr>  
 
@@ -167,6 +168,9 @@ set completeopt=menuone,menu,longest,preview
 "For editing matlab files in vim
 autocmd BufEnter *.m    compiler mlint 
 
+"Editing arduino files
+autocmd! BufNewFile,BufRead *.pde,*.ino setlocal ft=arduino
+
 if has ("autocmd")
     filetype plugin indent on
 endif
@@ -174,15 +178,30 @@ endif
 " Vimwiki options
 "
 let bitacora = {}
-let bitacora.path = '~/src/doc/jupbarrerastuff/bitacora/'
+let bitacora.path = '~/pro/doc/jupbarrerastuff/bitacora/'
 let bitacora.path_html = '~/Dropbox/msc_2012_T1/bitacora'
 let bitacora.index = 'main'
 
 let publicWiki = {}
-let publicWiki.path = '~/src/doc/jupbarrerastuff/publicWiki/'
+let publicWiki.path = '~/pro/doc/jupbarrerastuff/publicWiki/'
 let publicWiki.path_html = '~/Dropbox/publicwiki/'
 let publicWiki.index = 'index'
 let publicWiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
 
-let g:vimwiki_list = [bitacora, publicWiki]
+let sentidren = {}
+let sentidren.path = '~/pro/doc/jupbarrerastuff/sentidren/'
+let sentidren.path_html = '~/Dropbox/proyectos/sentidren/sentidrenWiki/'
+let sentidren.index = 'index'
 
+let g:vimwiki_list = [bitacora, publicWiki, sentidren]
+
+"diseble arrow keys in vim
+
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>

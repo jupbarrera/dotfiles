@@ -1,3 +1,8 @@
-#No quiero que git este poniendo gorro con los bundles total se acutualiza con :bundleinstall desde mi vimrc
+#No quiero que git este poniendo gorro con los bundles total se actualiza con :bundleinstall desde mi vimrc
 
 .vim/bundle/
+
+# Archivos temporales de vim, gedit
+
+*.sw*
+*.*~
