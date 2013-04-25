@@ -3,6 +3,11 @@
 
 " Use Vim settings
 set nocompatible          
+set history=50
+set nobackup
+set noswapfile
+set laststatus=2 
+
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
@@ -14,36 +19,49 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 
 " original repos on github
-Bundle 'tpope/vim-fugitive'
 Bundle "vim-scripts/c.vim"
-Bundle "edsono/vim-matchit"
-Bundle "vim-scripts/The-NERD-tree"
-Bundle "Soares/rainbow.vim"
-Bundle "vim-scripts/OmniCppComplete"
 Bundle "vim-scripts/ShowMarks"
-Bundle "tpope/vim-surround"
-Bundle "altercation/vim-colors-solarized"
-Bundle "vim-scripts/taglist.vim"
-Bundle "scrooloose/nerdcommenter"
+"Bundle "vim-scripts/OmniCppComplete"
+Bundle "artemkin/taglist.vim"
+"Bundle "vim-scripts/doxygen-support.vim"
+"Bundle "vim-scripts/DoxygenToolkit.vim"
+"Bundle "vim-scripts/TwitVim"
+"Bundle "vim-scripts/Arduino-syntax-file"
+"Bundle "vim-scripts/octave.vim--"
 Bundle "vim-scripts/SearchComplete"
+Bundle "vim-scripts/vimwiki"
+"Bundle 'vim-scripts/ctags.vim'
+Bundle "Rip-Rip/clang_complete"
+"Bundle "tpope/vim-surround"
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-obsession'
+Bundle 'tpope/vim-dispatch'
+"Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-speeddating'
+Bundle "altercation/vim-colors-solarized"
+Bundle 'kien/ctrlp.vim'
+Bundle "scrooloose/nerdcommenter"
 Bundle "scrooloose/syntastic"
+Bundle "scrooloose/nerdtree"
+Bundle "edsono/vim-matchit"
+Bundle 'vim-ruby/vim-ruby'
+Bundle "Soares/rainbow.vim"
 Bundle "sgeb/vim-matlab"
-Bundle "vim-scripts/octave.vim--"
 Bundle "pyflakes/pyflakes"
 Bundle "ervandew/supertab"
 Bundle "SirVer/ultisnips"
-Bundle "vim-scripts/doxygen-support.vim"
-Bundle "vim-scripts/DoxygenToolkit.vim"
 Bundle "myusuf3/numbers.vim"
-Bundle "xolox/vim-lua-inspect"
-Bundle "vim-scripts/vimwiki"
+"Bundle "xolox/vim-lua-inspect"
 Bundle "thanthese/Tortoise-Typing"
 Bundle "gerw/vim-latex-suite"
 Bundle "Lokaltog/vim-powerline"
 Bundle "benmills/vimux"
-Bundle "vim-scripts/TwitVim"
 Bundle "gitorious.org/vim-for-qt-kde/vim-qmake.git"
-Bundle "vim-scripts/Arduino-syntax-file"
+"Bundle "kakkyz81/evervim"
+Bundle "git://git.wincent.com/command-t.git"
+Bundle 'danro/rename.vim'
+
 
 filetype plugin indent on     " required!
 
@@ -67,6 +85,11 @@ set expandtab
 set tabstop=4
 "set cindent
 set shiftwidth=4
+
+" clang_complete Avoid freezing on offending code
+let g:clang_user_options='|| exit 0'
+let g:clang_close_preview=1
+
 
 "Activate spellchecker
 runtime plugins/spellfile.vim
@@ -100,7 +123,7 @@ syntax on
 set t_Co=16
 
 colorscheme solarized
-set background=dark
+set background=dark"light
 
 "Barras de estado
 set laststatus=2
@@ -131,39 +154,9 @@ set statusline=%F%m%r%h%w\ [%{&ff}]\ [%Y]\ [HEX=\%02.2B]\ [X=%04l\ Y=%03v]\ [LEN
 "old
 "set statusline=[FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
-" configure tags - add additional tags here or comment out not-used ones
-"set tags+=~/.vim/tags/myProjects
-set tags+=~/.vim/tags/stl
-set tags+=~/.vim/tags/qt4
-set tags+=~/.vim/tags/eigen
-set tags+=./tags "Etiquetas generadas en el directorio actual
-" set tags+=~/.vim/tags/gl
-
-" build tags of your own project with CTRL+F12     
-noremap <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<cr>     
-inoremap <F12> <Esc>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<cr>  
-
-" OmniCppComplete
-let OmniCpp_NamespaceSearch = 1
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_ShowAccess = 1
-let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-
-au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
-
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
-
-"Cmake sintax highlight and identation mode
-
-":autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in runtime! indent/cmake.vim 
-":autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in setf cmake
-":autocmd BufRead,BufNewFile *.ctest,*.ctest.in setf cmake
 
 "For editing matlab files in vim
 autocmd BufEnter *.m    compiler mlint 
@@ -174,6 +167,12 @@ autocmd! BufNewFile,BufRead *.pde,*.ino setlocal ft=arduino
 if has ("autocmd")
     filetype plugin indent on
 endif
+
+"map Q to something useful
+noremap Q gq
+
+"commandT remap
+noremap <leader>o <Esc>:CommandT<CR>
 
 " Vimwiki options
 "
@@ -205,3 +204,4 @@ noremap  <Left> ""
 noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
+
