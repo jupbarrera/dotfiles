@@ -1,6 +1,7 @@
 #No quiero que git este poniendo gorro con los bundles total se actualiza con :bundleinstall desde mi vimrc
 
 .vim/bundle/
+.vim/UltiSnips
 
 # Archivos temporales de vim, gedit
 

@@ -1,0 +1,17 @@
+[user]
+	name = Jupiter Barrera (jupbarrera)
+	email = jupir5@gmail.com
+[apply]
+	whitespace = nowarn
+[core]
+	autocrlf = false
+	safecrlf = false
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+  wdiff = diff --color-words
