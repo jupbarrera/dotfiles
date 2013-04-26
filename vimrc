@@ -19,25 +19,15 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 
 " original repos on github
-Bundle "vim-scripts/c.vim"
-Bundle "vim-scripts/ShowMarks"
-"Bundle "vim-scripts/OmniCppComplete"
 Bundle "artemkin/taglist.vim"
-"Bundle "vim-scripts/doxygen-support.vim"
-"Bundle "vim-scripts/DoxygenToolkit.vim"
-"Bundle "vim-scripts/TwitVim"
-"Bundle "vim-scripts/Arduino-syntax-file"
-"Bundle "vim-scripts/octave.vim--"
+Bundle "vim-scripts/ShowMarks"
 Bundle "vim-scripts/SearchComplete"
 Bundle "vim-scripts/vimwiki"
-"Bundle 'vim-scripts/ctags.vim'
 Bundle "Rip-Rip/clang_complete"
-"Bundle "tpope/vim-surround"
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-obsession'
 Bundle 'tpope/vim-dispatch'
-"Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-speeddating'
 Bundle "altercation/vim-colors-solarized"
 Bundle 'kien/ctrlp.vim'
@@ -52,15 +42,27 @@ Bundle "pyflakes/pyflakes"
 Bundle "ervandew/supertab"
 Bundle "SirVer/ultisnips"
 Bundle "myusuf3/numbers.vim"
-"Bundle "xolox/vim-lua-inspect"
 Bundle "thanthese/Tortoise-Typing"
 Bundle "gerw/vim-latex-suite"
 Bundle "Lokaltog/vim-powerline"
 Bundle "benmills/vimux"
 Bundle "gitorious.org/vim-for-qt-kde/vim-qmake.git"
-"Bundle "kakkyz81/evervim"
 Bundle "git://git.wincent.com/command-t.git"
 Bundle 'danro/rename.vim'
+Bundle "airblade/vim-gitgutter"
+
+"Bundle "vim-scripts/doxygen-support.vim"
+"Bundle "vim-scripts/DoxygenToolkit.vim"
+"Bundle "vim-scripts/TwitVim"
+"Bundle "vim-scripts/Arduino-syntax-file"
+"Bundle "vim-scripts/octave.vim--"
+"Bundle "kakkyz81/evervim"
+"Bundle "xolox/vim-lua-inspect"
+"Bundle "vim-scripts/c.vim"
+"Bundle "vim-scripts/OmniCppComplete"
+"Bundle 'vim-scripts/ctags.vim'
+"Bundle "tpope/vim-surround"
+"Bundle 'tpope/vim-rake'
 
 
 filetype plugin indent on     " required!
@@ -86,10 +88,33 @@ set tabstop=4
 "set cindent
 set shiftwidth=4
 
-" clang_complete Avoid freezing on offending code
-let g:clang_user_options='|| exit 0'
-let g:clang_close_preview=1
+" Clang Complete Settings
 
+let g:clang_use_library = 1
+" if there's an error, allow us to see it
+let g:clang_complete_copen=1
+let g:clang_complete_macros=1
+let g:clang_complete_patterns=0
+" Limit memory use
+let g:clang_memory_percent=70
+
+" Remove -std=c++11 if you don't use C++ for everything like I do.
+"let g:clang_user_options=' -std=c++11 || exit 0'
+"
+let g:clang_auto_select=1
+set conceallevel=2
+set concealcursor=vin
+let g:clang_snippets=1
+let g:clang_conceal_snippets=1
+" The single one that works with clang_complete
+let g:clang_snippets_engine='clang_complete'
+" Disable auto popup, use <Tab> to autocomplete
+let g:clang_complete_auto = 0
+
+" Limit popup menu height
+set pumheight=15
+" SuperTab option for context aware completion
+let g:SuperTabDefaultCompletionType = "context"
 
 "Activate spellchecker
 runtime plugins/spellfile.vim
