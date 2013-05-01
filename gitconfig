@@ -4,6 +4,7 @@
 [apply]
 	whitespace = nowarn
 [core]
+    editor = vim
 	autocrlf = false
 	safecrlf = false
 [alias]

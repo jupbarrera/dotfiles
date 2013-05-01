@@ -16,54 +16,68 @@ call vundle#rc()
 "let Vundle manage Vundle  " required! 
 Bundle 'gmarik/vundle'
 
-" My Bundles here:
+"original repos on github
 
-" original repos on github
-Bundle "artemkin/taglist.vim"
-Bundle "vim-scripts/ShowMarks"
-Bundle "vim-scripts/SearchComplete"
-Bundle "vim-scripts/vimwiki"
+"Make vim a c++ IDE
+
+Bundle "majutsushi/tagbar"
 Bundle "Rip-Rip/clang_complete"
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
+Bundle "git://git.wincent.com/command-t.git"
+Bundle "SirVer/ultisnips"
 Bundle 'tpope/vim-obsession'
 Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-speeddating'
-Bundle "altercation/vim-colors-solarized"
-Bundle 'kien/ctrlp.vim'
 Bundle "scrooloose/nerdcommenter"
 Bundle "scrooloose/syntastic"
-Bundle "scrooloose/nerdtree"
-Bundle "edsono/vim-matchit"
-Bundle 'vim-ruby/vim-ruby'
-Bundle "Soares/rainbow.vim"
-Bundle "sgeb/vim-matlab"
-Bundle "pyflakes/pyflakes"
 Bundle "ervandew/supertab"
-Bundle "SirVer/ultisnips"
-Bundle "myusuf3/numbers.vim"
-Bundle "thanthese/Tortoise-Typing"
-Bundle "gerw/vim-latex-suite"
-Bundle "Lokaltog/vim-powerline"
-Bundle "benmills/vimux"
-Bundle "gitorious.org/vim-for-qt-kde/vim-qmake.git"
-Bundle "git://git.wincent.com/command-t.git"
-Bundle 'danro/rename.vim'
+Bundle "scrooloose/nerdtree"
 Bundle "airblade/vim-gitgutter"
+Bundle "myusuf3/numbers.vim"
+Bundle "edsono/vim-matchit"
+Bundle "tpope/vim-tbone"
+Bundle 'tpope/vim-fugitive'
+Bundle "vim-scripts/ShowMarks"
+Bundle "terryma/vim-multiple-cursors"
+Bundle "kien/rainbow_parentheses.vim"
+"latex, python, others
+Bundle "vim-scripts/vimwiki"
+Bundle "mattn/calendar-vim"
+Bundle "pyflakes/pyflakes"
+Bundle "gerw/vim-latex-suite"
+Bundle 'danro/rename.vim'
+Bundle "thanthese/Tortoise-Typing"
+Bundle "benmills/vimux"
+"improve looks
+Bundle "altercation/vim-colors-solarized"
+Bundle "Lokaltog/vim-powerline"
+"Syntax plugins
+Bundle "gitorious.org/vim-for-qt-kde/vim-qmake.git"
+Bundle 'tpope/vim-markdown'
+"not working properly
 
+"command-t is similar 
+"Bundle "kien/ctrlp.vim"
+"mmm implement somethig with ultisnips
 "Bundle "vim-scripts/doxygen-support.vim"
 "Bundle "vim-scripts/DoxygenToolkit.vim"
+"to slow
 "Bundle "vim-scripts/TwitVim"
-"Bundle "vim-scripts/Arduino-syntax-file"
-"Bundle "vim-scripts/octave.vim--"
 "Bundle "kakkyz81/evervim"
+"Not using
+"Bundle "vim-scripts/Arduino-syntax-file"
+"Bundle "sgeb/vim-matlab"
+"Bundle "vim-scripts/octave.vim--"
 "Bundle "xolox/vim-lua-inspect"
+"Bundle "tpope/vim-surround"
+"Bundle "tpope/vim-rake"
+"Bundle "tpope/vim-speeddating"
+"seem like tagbar is better
+"Bundle "artemkin/taglist.vim"
+"clang_complete and ultisnips are better
 "Bundle "vim-scripts/c.vim"
 "Bundle "vim-scripts/OmniCppComplete"
-"Bundle 'vim-scripts/ctags.vim'
-"Bundle "tpope/vim-surround"
-"Bundle 'tpope/vim-rake'
-
+"Bundle "vim-scripts/ctags.vim"
+"can't make it work correctly
+"Bundle "vim-scripts/SearchComplete"
 
 filetype plugin indent on     " required!
 
@@ -99,7 +113,7 @@ let g:clang_complete_patterns=0
 let g:clang_memory_percent=70
 
 " Remove -std=c++11 if you don't use C++ for everything like I do.
-"let g:clang_user_options=' -std=c++11 || exit 0'
+let g:clang_user_options=' -std=c++11 || exit 0'
 "
 let g:clang_auto_select=1
 set conceallevel=2
@@ -115,6 +129,13 @@ let g:clang_complete_auto = 0
 set pumheight=15
 " SuperTab option for context aware completion
 let g:SuperTabDefaultCompletionType = "context"
+
+" Tagbar remap TagbarToggle to F8
+nmap <F8> :TagbarToggle<CR>
+
+" Taglist remap TListToggle to F8
+"nnoremap <silent> <F8> :TlistToggle<CR>
+"let g:Tlist_Process_File_Always=1 
 
 "Activate spellchecker
 runtime plugins/spellfile.vim
@@ -169,6 +190,18 @@ let g:Imap_FreezeImap=1
 
 let mapleader = ","
 
+"EASIER SPLIT NAVIGATIONS
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+"MORE NATURAL SPLIT OPENING
+
+set splitbelow
+set splitright
+
 "iQuickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
@@ -193,27 +226,41 @@ if has ("autocmd")
     filetype plugin indent on
 endif
 
+"Vimux keybinding
+" Prompt for a command to run
+map <Leader>rp :VimuxPromptCommand<CR>
+" Run last command executed by VimuxRunCommand
+map <Leader>rl :VimuxRunLastCommand<CR>
+" Inspect runner pane
+map <Leader>ri :VimuxInspectRunner<CR>
+" Close all other tmux panes in current window
+map <Leader>rx :VimuxClosePanes<CR>
+" Close vim tmux runner opened by VimuxRunCommand
+map <Leader>rq :VimuxCloseRunner<CR>
+" Interrupt any command running in the runner pane
+map <Leader>rs :VimuxInterruptRunner<CR>
+
 "map Q to something useful
 noremap Q gq
 
 "commandT remap
-noremap <leader>o <Esc>:CommandT<CR>
+noremap <leader>t <Esc>:CommandT<CR>
 
 " Vimwiki options
 "
 let bitacora = {}
-let bitacora.path = '~/pro/doc/jupbarrerastuff/bitacora/'
+let bitacora.path = '~/jupbarrerastuff/bitacora/'
 let bitacora.path_html = '~/Dropbox/msc_2012_T1/bitacora'
 let bitacora.index = 'main'
 
 let publicWiki = {}
-let publicWiki.path = '~/pro/doc/jupbarrerastuff/publicWiki/'
+let publicWiki.path = '~/jupbarrerastuff/publicWiki/'
 let publicWiki.path_html = '~/Dropbox/publicwiki/'
 let publicWiki.index = 'index'
 let publicWiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
 
 let sentidren = {}
-let sentidren.path = '~/pro/doc/jupbarrerastuff/sentidren/'
+let sentidren.path = '~/jupbarrerastuff/sentidren/'
 let sentidren.path_html = '~/Dropbox/proyectos/sentidren/sentidrenWiki/'
 let sentidren.index = 'index'
 
@@ -229,4 +276,12 @@ noremap  <Left> ""
 noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
+
+"Patch to fix a error with tmux, this works instead of recompiling vim with
+"ruby1.8 
+ruby << EOF
+class Object
+  def flush; end unless Object.new.respond_to?(:flush)
+  end
+EOF
 
