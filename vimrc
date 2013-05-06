@@ -52,7 +52,6 @@ Bundle "Lokaltog/vim-powerline"
 "Syntax plugins
 Bundle "gitorious.org/vim-for-qt-kde/vim-qmake.git"
 Bundle 'tpope/vim-markdown'
-"not working properly
 
 "command-t is similar 
 "Bundle "kien/ctrlp.vim"
