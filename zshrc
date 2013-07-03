@@ -33,6 +33,13 @@ plugins=(git debian gem github svn history-substring-search)
 
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
+if [[ "$TERM" != "screen-256color" ]]
+then
+    tmux attach-session -t "$USER" || tmux new-session -s "$USER"
+    exit
+fi
+
+
 export EDITOR="vim"
 bindkey -v 
 
@@ -48,17 +55,18 @@ source $ZSH/oh-my-zsh.sh
 alias rake='noglob rake'
 
 PATH=$PATH:/usr/local/MATLAB/R2011b/bin # Add matlab to path
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:/usr/java/lib/i386/client # add java home
-PATH=$PATH:$HOME/bin/arduino-1.0.2 # arduino home
-PATH=$PATH:$HOME/bin/fritzing-0.7.1b #fritzing home
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#PATH=$PATH:/usr/java/lib/i386/client # add java home
+#PATH=$PATH:$HOME/bin/arduino-1.0.2 # arduino home
+#PATH=$PATH:$HOME/bin/fritzing-0.7.1b #fritzing home
 
 #Set PATH!!
 export PATH=${PATH}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
-PYTHONPATH=$PYTHONPATH:$HOME/pro/python/pynaoqi/ #NAO python path 
-
 #set PYTHONPATH
+PYTHONPATH=$PYTHONPATH:$HOME/pro/python/pynaoqi/ #NAO python path 
+PYTHONPATH=$PYTHONPATH:$HOME/bin/clang/bindings/python #Clang python bindings
+
 export PYTHONPATH=${PYTHONPATH}
 
 # universal tarball extractor

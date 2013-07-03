@@ -22,6 +22,7 @@ Bundle 'gmarik/vundle'
 
 Bundle "majutsushi/tagbar"
 Bundle "Rip-Rip/clang_complete"
+"Bundle "FooBarrior/clavim"
 Bundle "git://git.wincent.com/command-t.git"
 Bundle "SirVer/ultisnips"
 Bundle 'tpope/vim-obsession'
@@ -38,6 +39,9 @@ Bundle 'tpope/vim-fugitive'
 Bundle "vim-scripts/ShowMarks"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "kien/rainbow_parentheses.vim"
+"Bundle "sven-strothoff/vim-clang_doxygen"
+Bundle "jupbarrera/vim-clang_doxygen"
+Bundle "tpope/vim-unimpaired"
 "latex, python, others
 Bundle "vim-scripts/vimwiki"
 Bundle "mattn/calendar-vim"
@@ -52,6 +56,7 @@ Bundle "Lokaltog/vim-powerline"
 "Syntax plugins
 Bundle "gitorious.org/vim-for-qt-kde/vim-qmake.git"
 Bundle 'tpope/vim-markdown'
+Bundle 'suan/vim-instant-markdown'
 
 "command-t is similar 
 "Bundle "kien/ctrlp.vim"
@@ -123,11 +128,20 @@ let g:clang_conceal_snippets=1
 let g:clang_snippets_engine='clang_complete'
 " Disable auto popup, use <Tab> to autocomplete
 let g:clang_complete_auto = 0
+"use ulisnips with clang_complete
+let g:clang_snippets = 1
+let g:clang_snippets_engine = 'ultisnips'
+
+" use ultisnips with clang_doxygen
+let g:clang_doxygen_snippet_plugin = "ultisnips"
 
 " Limit popup menu height
 set pumheight=15
 " SuperTab option for context aware completion
 let g:SuperTabDefaultCompletionType = "context"
+
+"map for toggle nerdtree 
+nnoremap <silent> <c-m> :NERDTreeToggle<cr>
 
 " Tagbar remap TagbarToggle to F8
 nmap <F8> :TagbarToggle<CR>
@@ -248,22 +262,25 @@ noremap <leader>t <Esc>:CommandT<CR>
 " Vimwiki options
 "
 let bitacora = {}
-let bitacora.path = '~/jupbarrerastuff/bitacora/'
-let bitacora.path_html = '~/Dropbox/msc_2012_T1/bitacora'
+let bitacora.path = '~/Dropbox/Evernote/TesisWiki'
 let bitacora.index = 'main'
+let bitacora.syntax = 'markdown'
+let bitacora.ext = '.txt'
 
 let publicWiki = {}
-let publicWiki.path = '~/jupbarrerastuff/publicWiki/'
-let publicWiki.path_html = '~/Dropbox/publicwiki/'
+let publicWiki.path = '~/Dropbox/Evernote/PublicWiki'
 let publicWiki.index = 'index'
+let publicWiki.syntax = 'markdown'
+let publicWiki.ext = '.txt'
 let publicWiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
 
-let sentidren = {}
-let sentidren.path = '~/jupbarrerastuff/sentidren/'
-let sentidren.path_html = '~/Dropbox/proyectos/sentidren/sentidrenWiki/'
-let sentidren.index = 'index'
+"let sentidren = {}
+"let sentidren.path = '~/jupbarrerastuff/sentidren/'
+"let sentidren.path_html = '~/Dropbox/proyectos/sentidren/sentidrenWiki/'
+"let sentidren.index = 'index'
 
-let g:vimwiki_list = [bitacora, publicWiki, sentidren]
+let g:vimwiki_list = [bitacora, publicWiki]
+"let g:vimwiki_customwiki2html='~/bin/myScripts/customwiki2html.sh'
 
 "diseble arrow keys in vim
 
