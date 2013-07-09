@@ -293,6 +293,11 @@ noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
 
+function g:callGeeknoteOnFile()
+      call system("")
+  endfunction
+nnoremap <leader>se :call g:callGeeknoteOnFile()<CR>
+
 "Patch to fix a error with tmux, this works instead of recompiling vim with
 "ruby1.8 
 ruby << EOF

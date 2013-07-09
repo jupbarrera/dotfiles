@@ -53,8 +53,11 @@ source $ZSH/oh-my-zsh.sh
 
 # Alias for rake to work correctly
 alias rake='noglob rake'
+# Alias for todo
+alias t='todo.sh -d /$HOME/bin/todo.txt_cli-2.9/todo.cfg'
 
 PATH=$PATH:/usr/local/MATLAB/R2011b/bin # Add matlab to path
+PATH=$PATH:$HOME/bin/todo.txt_cli-2.9 # Add todo.sh to path
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 #PATH=$PATH:/usr/java/lib/i386/client # add java home
 #PATH=$PATH:$HOME/bin/arduino-1.0.2 # arduino home
