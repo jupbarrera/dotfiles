@@ -21,7 +21,8 @@ Bundle 'gmarik/vundle'
 "Make vim a c++ IDE
 
 Bundle "majutsushi/tagbar"
-Bundle "Rip-Rip/clang_complete"
+"Bundle "Rip-Rip/clang_complete"
+"Bundle "Valloric/YouCompleteMe"
 "Bundle "FooBarrior/clavim"
 Bundle "git://git.wincent.com/command-t.git"
 Bundle "SirVer/ultisnips"
@@ -293,10 +294,10 @@ noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
 
-function g:callGeeknoteOnFile()
-      call system("")
-  endfunction
-nnoremap <leader>se :call g:callGeeknoteOnFile()<CR>
+"function g:callGeeknoteOnFile()
+      "call system("")
+  "endfunction
+"nnoremap <leader>se :call g:callGeeknoteOnFile()<CR>
 
 "Patch to fix a error with tmux, this works instead of recompiling vim with
 "ruby1.8 
