@@ -204,6 +204,8 @@ let g:Imap_FreezeImap=1
 
 let mapleader = ","
 
+map <Leader>ct :w !detex \| wc -w<CR>
+
 "EASIER SPLIT NAVIGATIONS
 
 nnoremap <C-J> <C-W><C-J>
