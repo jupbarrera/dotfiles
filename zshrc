@@ -29,7 +29,7 @@ ZSH_THEME="jupbarrera"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git debian gem github svn history-substring-search)
+plugins=(git debian gem github svn zshmarks history-substring-search)
 
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
@@ -55,6 +55,9 @@ source $ZSH/oh-my-zsh.sh
 alias rake='noglob rake'
 # Alias for todo
 alias t='todo.sh -d /$HOME/bin/todo.txt_cli-2.9/todo.cfg'
+# Alias for vlc with remote vlc control
+alias vlc='vlc --extraintf=luahttp --fullscreen --qt-start-minimized'
+
 
 PATH=$PATH:/usr/local/MATLAB/R2011b/bin # Add matlab to path
 PATH=$PATH:$HOME/bin/todo.txt_cli-2.9 # Add todo.sh to path
