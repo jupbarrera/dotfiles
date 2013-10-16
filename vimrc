@@ -69,7 +69,7 @@ Bundle 'suan/vim-instant-markdown'
 "Bundle "kakkyz81/evervim"
 "Not using
 "Bundle "vim-scripts/Arduino-syntax-file"
-"Bundle "sgeb/vim-matlab"
+Bundle "sgeb/vim-matlab"
 "Bundle "vim-scripts/octave.vim--"
 "Bundle "xolox/vim-lua-inspect"
 "Bundle "tpope/vim-surround"
@@ -84,9 +84,9 @@ Bundle 'suan/vim-instant-markdown'
 "can't make it work correctly
 "Bundle "vim-scripts/SearchComplete"
 
-filetype plugin indent on     " required!
-
 " NOTE: comments after Bundle command are not allowed..
+"
+filetype plugin indent on     " required!
 
 " Remapping Esc key!!
 :imap jk <Esc>
@@ -181,7 +181,6 @@ syntax on
 "colorscheme
 "For solarized theme
 set t_Co=16
-
 colorscheme solarized
 set background=dark"light
 
@@ -233,7 +232,7 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
 "For editing matlab files in vim
-autocmd BufEnter *.m    compiler mlint 
+"autocmd BufEnter *.m    compiler mlint 
 
 "Editing arduino files
 autocmd! BufNewFile,BufRead *.pde,*.ino setlocal ft=arduino
