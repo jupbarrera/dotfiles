@@ -58,6 +58,7 @@ Bundle "Lokaltog/vim-powerline"
 Bundle "gitorious.org/vim-for-qt-kde/vim-qmake.git"
 Bundle 'tpope/vim-markdown'
 Bundle 'suan/vim-instant-markdown'
+Bundle 'https://github.com/stephenmckinney/vim-solarized-powerline.git'
 
 "command-t is similar 
 "Bundle "kien/ctrlp.vim"
@@ -307,4 +308,7 @@ class Object
   def flush; end unless Object.new.respond_to?(:flush)
   end
 EOF
+
+let g:Powerline_theme='short'
+let g:Powerline_colorscheme='solarized256_dark'
 
