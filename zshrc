@@ -29,7 +29,7 @@ ZSH_THEME="jupbarrera"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git debian gem github svn zshmarks history-substring-search)
+plugins=(git gem pip rake cp rsync svn tmux extract)
 
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
@@ -38,7 +38,6 @@ then
     tmux attach-session -t "$USER" || tmux new-session -s "$USER"
     exit
 fi
-
 
 export EDITOR="vim"
 bindkey -v 
@@ -51,23 +50,23 @@ bindkey '^N' history-search-forward
 
 source $ZSH/oh-my-zsh.sh
 
-# Alias for rake to work correctly
-alias rake='noglob rake'
 # Alias for todo
 alias t='todo.sh -d /$HOME/bin/todo.txt_cli-2.9/todo.cfg'
 # Alias for vlc with remote vlc control
 alias vlc='vlc --extraintf=luahttp --fullscreen --qt-start-minimized'
 
 
-PATH=$PATH:/usr/local/MATLAB/R2011b/bin # Add matlab to path
-PATH=$PATH:$HOME/bin/todo.txt_cli-2.9 # Add todo.sh to path
+#PATH=$PATH:/usr/local/MATLAB/R2011b/bin # Add matlab to path
+PATH=$PATH:$HOME/bin
+PATH=$PATH:/usr/local/texlive/2013/bin/x86_64-linux
+#PATH=$PATH:$HOME/bin/todo.txt_cli-2.9 # Add todo.sh to path
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 #PATH=$PATH:/usr/java/lib/i386/client # add java home
 #PATH=$PATH:$HOME/bin/arduino-1.0.2 # arduino home
 #PATH=$PATH:$HOME/bin/fritzing-0.7.1b #fritzing home
 
 #Set PATH!!
-export PATH=${PATH}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+export PATH=${PATH}
 
 #set PYTHONPATH
 PYTHONPATH=$PYTHONPATH:$HOME/pro/python/pynaoqi/ #NAO python path 
@@ -75,25 +74,25 @@ PYTHONPATH=$PYTHONPATH:$HOME/bin/clang/bindings/python #Clang python bindings
 
 export PYTHONPATH=${PYTHONPATH}
 
-# universal tarball extractor
-extr () {
-    if [ -f $1 ] ; then
-          case $1 in
-              *.tar.bz2)   tar xjf $1     ;;
-              *.tar.gz)    tar xzf $1     ;;
-              *.bz2)       bunzip2 $1     ;;
-              *.rar)       rar x $1       ;;
-              *.gz)        gunzip $1      ;;
-              *.tar)       tar xf $1      ;;
-              *.tbz2)      tar xjf $1     ;;
-              *.tgz)       tar xzf $1     ;;
-              *.zip)       unzip $1       ;;
-              *.Z)         uncompress $1  ;;
-              *.7z)        7z x $1        ;;
-              *)           echo "'$1' cannot be extracted via extr()" ;;                   
-          esac
-          else
-         echo "'$1' is not a valid file"
-   fi
-}
+# universal tarball extractor extract is better
+#extr () {
+    #if [ -f $1 ] ; then
+          #case $1 in
+              #*.tar.bz2)   tar xjf $1     ;;
+              #*.tar.gz)    tar xzf $1     ;;
+              #*.bz2)       bunzip2 $1     ;;
+              #*.rar)       rar x $1       ;;
+              #*.gz)        gunzip $1      ;;
+              #*.tar)       tar xf $1      ;;
+              #*.tbz2)      tar xjf $1     ;;
+              #*.tgz)       tar xzf $1     ;;
+              #*.zip)       unzip $1       ;;
+              #*.Z)         uncompress $1  ;;
+              #*.7z)        7z x $1        ;;
+              #*)           echo "'$1' cannot be extracted via extr()" ;;                   
+          #esac
+          #else
+         #echo "'$1' is not a valid file"
+   #fi
+#}
 

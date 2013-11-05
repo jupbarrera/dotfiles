@@ -24,7 +24,7 @@ Bundle "majutsushi/tagbar"
 "Bundle "Rip-Rip/clang_complete"
 "Bundle "Valloric/YouCompleteMe"
 "Bundle "FooBarrior/clavim"
-Bundle "git://git.wincent.com/command-t.git"
+Bundle "https://github.com/wincent/Command-T.git"
 Bundle "SirVer/ultisnips"
 Bundle 'tpope/vim-obsession'
 Bundle 'tpope/vim-dispatch'
@@ -41,7 +41,6 @@ Bundle "vim-scripts/ShowMarks"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "kien/rainbow_parentheses.vim"
 "Bundle "sven-strothoff/vim-clang_doxygen"
-Bundle "jupbarrera/vim-clang_doxygen"
 Bundle "tpope/vim-unimpaired"
 "latex, python, others
 Bundle "vim-scripts/vimwiki"
@@ -52,13 +51,13 @@ Bundle 'danro/rename.vim'
 Bundle "thanthese/Tortoise-Typing"
 Bundle "benmills/vimux"
 "improve looks
-Bundle "altercation/vim-colors-solarized"
+"Bundle "altercation/vim-colors-solarized"
 Bundle "Lokaltog/vim-powerline"
 "Syntax plugins
-Bundle "gitorious.org/vim-for-qt-kde/vim-qmake.git"
+"Bundle "gitorious.org/vim-for-qt-kde/vim-qmake.git"
 Bundle 'tpope/vim-markdown'
 Bundle 'suan/vim-instant-markdown'
-Bundle 'https://github.com/stephenmckinney/vim-solarized-powerline.git'
+"Bundle 'https://github.com/stephenmckinney/vim-solarized-powerline.git'
 
 "command-t is similar 
 "Bundle "kien/ctrlp.vim"
@@ -70,7 +69,7 @@ Bundle 'https://github.com/stephenmckinney/vim-solarized-powerline.git'
 "Bundle "kakkyz81/evervim"
 "Not using
 "Bundle "vim-scripts/Arduino-syntax-file"
-Bundle "sgeb/vim-matlab"
+"Bundle "sgeb/vim-matlab"
 "Bundle "vim-scripts/octave.vim--"
 "Bundle "xolox/vim-lua-inspect"
 "Bundle "tpope/vim-surround"
@@ -153,11 +152,11 @@ nmap <F8> :TagbarToggle<CR>
 "let g:Tlist_Process_File_Always=1 
 
 "Activate spellchecker
-runtime plugins/spellfile.vim
-set spell
-set spelllang=es,en
+"runtime plugins/spellfile.vim
+"set spell
+"set spelllang=es,en
 "muestra X sugerencias, por defecto son 5.
-set spellsuggest=5
+"set spellsuggest=5
 
 "Formating Text
 func! WordProcessorMode() 
@@ -182,8 +181,8 @@ syntax on
 "colorscheme
 "For solarized theme
 set t_Co=16
-colorscheme solarized
-set background=dark"light
+"colorscheme solarized
+"set background=dark"light
 
 "Barras de estado
 set laststatus=2
@@ -312,3 +311,9 @@ EOF
 let g:Powerline_theme='short'
 let g:Powerline_colorscheme='solarized256_dark'
 
+"activate Rainbow plugin
+"
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
