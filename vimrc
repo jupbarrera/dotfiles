@@ -24,7 +24,8 @@ Bundle "majutsushi/tagbar"
 "Bundle "Rip-Rip/clang_complete"
 "Bundle "Valloric/YouCompleteMe"
 "Bundle "FooBarrior/clavim"
-Bundle "https://github.com/wincent/Command-T.git"
+Bundle 'wincent/Command-T'
+Bundle 'erisian/pywordcount'
 Bundle "SirVer/ultisnips"
 Bundle 'tpope/vim-obsession'
 Bundle 'tpope/vim-dispatch'
@@ -44,19 +45,20 @@ Bundle "kien/rainbow_parentheses.vim"
 Bundle "tpope/vim-unimpaired"
 "latex, python, others
 Bundle "vim-scripts/vimwiki"
-Bundle "mattn/calendar-vim"
+"Bundle "mattn/calendar-vim"
 Bundle "pyflakes/pyflakes"
 Bundle "gerw/vim-latex-suite"
 Bundle 'danro/rename.vim'
 Bundle "thanthese/Tortoise-Typing"
-Bundle "benmills/vimux"
+"Bundle "benmills/vimux"
 "improve looks
 "Bundle "altercation/vim-colors-solarized"
-Bundle "Lokaltog/vim-powerline"
+Bundle "Lokaltog/powerline"
+"Bundle "Lokaltog/vim-powerline"
 "Syntax plugins
 "Bundle "gitorious.org/vim-for-qt-kde/vim-qmake.git"
-Bundle 'tpope/vim-markdown'
-Bundle 'suan/vim-instant-markdown'
+"Bundle 'tpope/vim-markdown'
+"Bundle 'suan/vim-instant-markdown'
 "Bundle 'https://github.com/stephenmckinney/vim-solarized-powerline.git'
 
 "command-t is similar 
@@ -88,6 +90,9 @@ Bundle 'suan/vim-instant-markdown'
 "
 filetype plugin indent on     " required!
 
+"Powerline settings
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
 " Remapping Esc key!!
 :imap jk <Esc>
 
@@ -100,7 +105,7 @@ set number              " Turn on line numbering
 set ignorecase
 set backspace=2         "Problemas con el backspace
 
-"Identación para cpp
+"cpp
 
 set expandtab
 set tabstop=4
@@ -109,32 +114,32 @@ set shiftwidth=4
 
 " Clang Complete Settings
 
-let g:clang_use_library = 1
-" if there's an error, allow us to see it
-let g:clang_complete_copen=1
-let g:clang_complete_macros=1
-let g:clang_complete_patterns=0
-" Limit memory use
-let g:clang_memory_percent=70
+"let g:clang_use_library = 1
+"" if there's an error, allow us to see it
+"let g:clang_complete_copen=1
+"let g:clang_complete_macros=1
+"let g:clang_complete_patterns=0
+"" Limit memory use
+"let g:clang_memory_percent=70
 
-" Remove -std=c++11 if you don't use C++ for everything like I do.
-let g:clang_user_options=' -std=c++11 || exit 0'
-"
-let g:clang_auto_select=1
-set conceallevel=2
-set concealcursor=vin
-let g:clang_snippets=1
-let g:clang_conceal_snippets=1
-" The single one that works with clang_complete
-let g:clang_snippets_engine='clang_complete'
-" Disable auto popup, use <Tab> to autocomplete
-let g:clang_complete_auto = 0
-"use ulisnips with clang_complete
-let g:clang_snippets = 1
-let g:clang_snippets_engine = 'ultisnips'
+"" Remove -std=c++11 if you don't use C++ for everything like I do.
+"let g:clang_user_options=' -std=c++11 || exit 0'
+""
+"let g:clang_auto_select=1
+"set conceallevel=2
+"set concealcursor=vin
+"let g:clang_snippets=1
+"let g:clang_conceal_snippets=1
+"" The single one that works with clang_complete
+"let g:clang_snippets_engine='clang_complete'
+"" Disable auto popup, use <Tab> to autocomplete
+"let g:clang_complete_auto = 0
+""use ulisnips with clang_complete
+"let g:clang_snippets = 1
+"let g:clang_snippets_engine = 'ultisnips'
 
 " use ultisnips with clang_doxygen
-let g:clang_doxygen_snippet_plugin = "ultisnips"
+"let g:clang_doxygen_snippet_plugin = "ultisnips"
 
 " Limit popup menu height
 set pumheight=15
@@ -172,8 +177,6 @@ func! WordProcessorMode()
 endfu 
 com! WP call WordProcessorMode()
 
-"For vim-powerline 
-let g:Powerline_symbols = 'fancy'
 
 "Sintax!!
 syntax on
@@ -194,7 +197,7 @@ filetype plugin indent on
 "Latex-Suite
 set grepprg=grep\ -nH\ $*
 
-"Algunas configuraciones para LaTex
+"Latex conf
 let g:tex_flavor='latex'
 let g:Tex_ViewRule_pdf='evince'
 let g:Tex_DefaultTargetFormat='pdf'
@@ -202,8 +205,6 @@ let g:Tex_MultipleCompileFormats='pdf, aux'
 let g:Imap_FreezeImap=1
 
 let mapleader = ","
-
-map <Leader>ct :w !detex \| wc -w<CR>
 
 "EASIER SPLIT NAVIGATIONS
 
@@ -220,12 +221,6 @@ set splitright
 "iQuickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
-"Status line
-set laststatus=2
-set statusline=%F%m%r%h%w\ [%{&ff}]\ [%Y]\ [HEX=\%02.2B]\ [X=%04l\ Y=%03v]\ [LEN=%L]
-"old
-"set statusline=[FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
@@ -263,25 +258,21 @@ noremap <leader>t <Esc>:CommandT<CR>
 
 " Vimwiki options
 "
-let bitacora = {}
-let bitacora.path = '~/Dropbox/Evernote/TesisWiki'
-let bitacora.index = 'main'
-let bitacora.syntax = 'markdown'
-let bitacora.ext = '.txt'
+"let bitacora = {}
+"let bitacora.path = '~/Dropbox/Evernote/TesisWiki'
+"let bitacora.index = 'main'
+"let bitacora.syntax = 'markdown'
+"let bitacora.ext = '.mmd'
 
 let publicWiki = {}
-let publicWiki.path = '~/Dropbox/Evernote/PublicWiki'
+let publicWiki.path = '~/shared_btsync/jupbarrerastuff/publicWiki'
 let publicWiki.index = 'index'
 let publicWiki.syntax = 'markdown'
-let publicWiki.ext = '.txt'
+let publicWiki.ext = '.mmd'
 let publicWiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
 
-"let sentidren = {}
-"let sentidren.path = '~/jupbarrerastuff/sentidren/'
-"let sentidren.path_html = '~/Dropbox/proyectos/sentidren/sentidrenWiki/'
-"let sentidren.index = 'index'
-
-let g:vimwiki_list = [bitacora, publicWiki]
+"let g:vimwiki_list = [bitacora, publicWiki]
+let g:vimwiki_list = [publicWiki]
 "let g:vimwiki_customwiki2html='~/bin/myScripts/customwiki2html.sh'
 
 "diseble arrow keys in vim
@@ -308,12 +299,44 @@ class Object
   end
 EOF
 
-"let g:Powerline_theme='short'
-"let g:Powerline_colorscheme='solarized256_dark'
-
 "activate Rainbow plugin
 "
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+"let g:word_count="<unknown>"
+"fun! WordCount()
+    "return g:word_count
+"endfun
+"fun! UpdateWordCount()
+    "let s = system("wc -w ".expand("%p"))
+    "let parts = split(s, ' ')
+    "if len(parts) > 1
+        "let g:word_count = parts[0]
+    "endif
+"endfun
+
+"augroup WordCounter
+    "au! CursorHold * call UpdateWordCount()
+    "au! CursorHoldI * call UpdateWordCount()
+"augroup END
+
+"" how eager are you? (default is 4000 ms)
+"set updatetime=500
+
+"set rtp+=~/.vim/bundle/pywordcount/plugin/
+
+"wordcount
+map <Leader>wc :WordCount()<CR>
+
+"For vim-powerline 
+let g:Powerline_symbols = 'fancy'
+
+"Status line
+"set laststatus=2
+"set statusline=%F%m%r%h%w\ [%{&ff}]\ [%Y]\ [HEX=\%02.2B]\ [X=%04l\ Y=%03v]\ [LEN=%L]
+"set statusline=%F%m%r%h%w\ [%{&ff}]\ [wc:%{WordCount()}]\ [HEX=\%02.2B]\ [X=%04l\ Y=%03v]\ [LEN=%L]
+"old
+"set statusline=[FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]

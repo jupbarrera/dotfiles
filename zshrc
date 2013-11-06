@@ -29,7 +29,7 @@ ZSH_THEME="jupbarrera"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git gem svn extract pip cp rsync rake tmux)
+plugins=(git gem svn extract pip cp rsync rake tmux zshmarks)
 
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
@@ -49,7 +49,7 @@ bindkey -v
 #bindkey '^N' history-search-forward  
 
 # Alias for todo
-alias t='todo.sh -d /$HOME/bin/todo.txt_cli-2.9/todo.cfg'
+alias t='todo.sh -d /$HOME/bin/todo.txt_cli-2.9/todo.cfg -t'
 # Alias for vlc with remote vlc control
 alias vlc='vlc --extraintf=luahttp --fullscreen --qt-start-minimized'
 
@@ -69,6 +69,7 @@ export PATH=${PATH}
 
 #set PYTHONPATH
 PYTHONPATH=$PYTHONPATH:$HOME/pro/python/pynaoqi/ #NAO python path 
+PYTHONPATH=$PYTHONPATH:/home/jupbarrera/.vim/bundle/pywordcount/python/pywordcount/ 
 #PYTHONPATH=$PYTHONPATH:$HOME/bin/clang/bindings/python #Clang python bindings
 
 export PYTHONPATH=${PYTHONPATH}
