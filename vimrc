@@ -1,5 +1,5 @@
 "my vimrc file Jupiter Barrera
-"jupir5@gmail.com
+"jupir6@gmail.com
 
 " Use Vim settings
 set nocompatible          
@@ -24,7 +24,7 @@ Bundle "majutsushi/tagbar"
 "Bundle "Rip-Rip/clang_complete"
 "Bundle "Valloric/YouCompleteMe"
 "Bundle "FooBarrior/clavim"
-Bundle "git://git.wincent.com/command-t.git"
+Bundle "https://github.com/wincent/Command-T.git"
 Bundle "SirVer/ultisnips"
 Bundle 'tpope/vim-obsession'
 Bundle 'tpope/vim-dispatch'
@@ -37,7 +37,7 @@ Bundle "edsono/vim-matchit"
 Bundle "tpope/vim-tbone"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "kien/rainbow_parentheses.vim"
-Bundle "jupbarrera/vim-clang_doxygen"
+"Bundle "sven-strothoff/vim-clang_doxygen"
 Bundle "tpope/vim-unimpaired"
 Bundle 'https://github.com/kshenoy/vim-signature'
 "Bundle "sven-strothoff/vim-clang_doxygen"
@@ -58,16 +58,15 @@ Bundle 'https://github.com/godlygeek/tabular.git'
 "Bundle 'https://github.com/vim-scripts/YankRing.vim'
 
 "improve looks
-Bundle "altercation/vim-colors-solarized"
+"Bundle "altercation/vim-colors-solarized"
 Bundle "Lokaltog/vim-powerline"
 
 "Syntax plugins
-Bundle "gitorious.org/vim-for-qt-kde/vim-qmake.git"
+"Bundle "gitorious.org/vim-for-qt-kde/vim-qmake.git"
 Bundle 'tpope/vim-markdown'
 Bundle 'suan/vim-instant-markdown'
 "Bundle 'https://github.com/stephenmckinney/vim-solarized-powerline.git'
 "Bundle 'jtratner/vim-flavored-markdown'
-
 
 "command-t is similar 
 "Bundle "kien/ctrlp.vim"
@@ -81,7 +80,7 @@ Bundle 'suan/vim-instant-markdown'
 "Bundle "kakkyz81/evervim"
 "Not using
 "Bundle "vim-scripts/Arduino-syntax-file"
-Bundle "sgeb/vim-matlab"
+"Bundle "sgeb/vim-matlab"
 "Bundle "vim-scripts/octave.vim--"
 "Bundle "xolox/vim-lua-inspect"
 "Bundle "tpope/vim-surround"
@@ -164,11 +163,11 @@ nmap <F8> :TagbarToggle<CR>
 "let g:Tlist_Process_File_Always=1 
 
 "Activate spellchecker
-runtime plugins/spellfile.vim
-set spell
-set spelllang=es,en
+"runtime plugins/spellfile.vim
+"set spell
+"set spelllang=es,en
 "muestra X sugerencias, por defecto son 5.
-set spellsuggest=5
+"set spellsuggest=5
 
 "Formating Text
 func! WordProcessorMode() 
@@ -192,9 +191,9 @@ syntax on
 
 "colorscheme
 "For solarized theme
-set t_Co=16
-colorscheme solarized
-set background=dark"light
+set t_Co=256
+"colorscheme solarized
+"set background=dark"light
 
 "Barras de estado
 set laststatus=2
@@ -322,5 +321,12 @@ EOF
 "augroup END
 
 "let g:Powerline_theme='long'
+"let g:Powerline_theme='short'
 "let g:Powerline_colorscheme='solarized256_dark'
 
+"activate Rainbow plugin
+"
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
