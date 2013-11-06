@@ -55,10 +55,11 @@ alias vlc='vlc --extraintf=luahttp --fullscreen --qt-start-minimized'
 
 source $ZSH/oh-my-zsh.sh
 
-#PATH=$PATH:/usr/local/MATLAB/R2011b/bin # Add matlab to path
 PATH=$PATH:$HOME/bin/todo.txt_cli-2.9 # Add todo.sh to path
-PATH=$PATH:/usr/local/texlive/2013/bin/x86_64-linux # texlive2013
+#PATH=$PATH:/usr/local/texlive/2013/bin/x86_64-linux # texlive2013
 PATH=$PATH:$HOME/bin
+PATH=$PATH:/usr/local/MATLAB/R2011b/bin # Add matlab 
+#PATH=$PATH:$HOME/pro/python/general/bin/ #add python general environment
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 #PATH=$PATH:/usr/java/lib/i386/client # add java home
 #PATH=$PATH:$HOME/bin/arduino-1.0.2 # arduino home
