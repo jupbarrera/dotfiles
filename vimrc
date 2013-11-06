@@ -30,20 +30,21 @@ Bundle 'tpope/vim-obsession'
 Bundle 'tpope/vim-dispatch'
 Bundle "scrooloose/nerdcommenter"
 Bundle "scrooloose/syntastic"
-Bundle "ervandew/supertab"
 Bundle "scrooloose/nerdtree"
-Bundle "airblade/vim-gitgutter"
+Bundle "ervandew/supertab"
 Bundle "myusuf3/numbers.vim"
 Bundle "edsono/vim-matchit"
 Bundle "tpope/vim-tbone"
-Bundle 'tpope/vim-fugitive'
-Bundle "vim-scripts/ShowMarks"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "kien/rainbow_parentheses.vim"
-"Bundle "sven-strothoff/vim-clang_doxygen"
 Bundle "jupbarrera/vim-clang_doxygen"
 Bundle "tpope/vim-unimpaired"
+Bundle 'https://github.com/kshenoy/vim-signature'
+"Bundle "sven-strothoff/vim-clang_doxygen"
+
 "latex, python, others
+Bundle "airblade/vim-gitgutter"
+Bundle 'tpope/vim-fugitive'
 Bundle "vim-scripts/vimwiki"
 Bundle "mattn/calendar-vim"
 Bundle "pyflakes/pyflakes"
@@ -51,21 +52,31 @@ Bundle "gerw/vim-latex-suite"
 Bundle 'danro/rename.vim'
 Bundle "thanthese/Tortoise-Typing"
 Bundle "benmills/vimux"
+Bundle 'https://github.com/godlygeek/tabular.git'
+
+"need to test
+"Bundle 'https://github.com/vim-scripts/YankRing.vim'
+
 "improve looks
 Bundle "altercation/vim-colors-solarized"
 Bundle "Lokaltog/vim-powerline"
+
 "Syntax plugins
 Bundle "gitorious.org/vim-for-qt-kde/vim-qmake.git"
 Bundle 'tpope/vim-markdown'
 Bundle 'suan/vim-instant-markdown'
-Bundle 'https://github.com/stephenmckinney/vim-solarized-powerline.git'
+"Bundle 'https://github.com/stephenmckinney/vim-solarized-powerline.git'
+"Bundle 'jtratner/vim-flavored-markdown'
+
 
 "command-t is similar 
 "Bundle "kien/ctrlp.vim"
+"similar to vim-signature
+"Bundle "vim-scripts/ShowMarks"
 "mmm implement somethig with ultisnips
 "Bundle "vim-scripts/doxygen-support.vim"
 "Bundle "vim-scripts/DoxygenToolkit.vim"
-"to slow
+"too slow
 "Bundle "vim-scripts/TwitVim"
 "Bundle "kakkyz81/evervim"
 "Not using
@@ -277,11 +288,6 @@ let publicWiki.syntax = 'markdown'
 let publicWiki.ext = '.txt'
 let publicWiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
 
-"let sentidren = {}
-"let sentidren.path = '~/jupbarrerastuff/sentidren/'
-"let sentidren.path_html = '~/Dropbox/proyectos/sentidren/sentidrenWiki/'
-"let sentidren.index = 'index'
-
 let g:vimwiki_list = [bitacora, publicWiki]
 "let g:vimwiki_customwiki2html='~/bin/myScripts/customwiki2html.sh'
 
@@ -309,6 +315,12 @@ class Object
   end
 EOF
 
-let g:Powerline_theme='short'
-let g:Powerline_colorscheme='solarized256_dark'
+"Extend markdown syntax with github flavored markdown
+"augroup markdown
+  "au!
+  "au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+"augroup END
+
+"let g:Powerline_theme='long'
+"let g:Powerline_colorscheme='solarized256_dark'
 
