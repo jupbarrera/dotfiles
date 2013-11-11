@@ -25,7 +25,7 @@ Bundle "majutsushi/tagbar"
 "Bundle "Valloric/YouCompleteMe"
 "Bundle "FooBarrior/clavim"
 Bundle 'wincent/Command-T'
-Bundle 'erisian/pywordcount'
+"Bundle 'erisian/pywordcount'
 Bundle "SirVer/ultisnips"
 Bundle 'tpope/vim-obsession'
 Bundle 'tpope/vim-dispatch'
@@ -35,7 +35,7 @@ Bundle "scrooloose/nerdtree"
 Bundle "ervandew/supertab"
 Bundle "myusuf3/numbers.vim"
 Bundle "edsono/vim-matchit"
-Bundle "tpope/vim-tbone"
+"Bundle "tpope/vim-tbone"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "kien/rainbow_parentheses.vim"
 "Bundle "sven-strothoff/vim-clang_doxygen"
@@ -52,19 +52,15 @@ Bundle "pyflakes/pyflakes"
 Bundle "gerw/vim-latex-suite"
 Bundle 'danro/rename.vim'
 Bundle "thanthese/Tortoise-Typing"
-"Bundle "benmills/vimux"
+Bundle "benmills/vimux"
 "
 "improve looks
 "Bundle "altercation/vim-colors-solarized"
 Bundle "Lokaltog/powerline"
-"Bundle "Lokaltog/vim-powerline"
-Bundle "benmills/vimux"
 Bundle 'https://github.com/godlygeek/tabular.git'
 
-"need to test
+"check how to use
 "Bundle 'https://github.com/vim-scripts/YankRing.vim'
-
-"improve looks
 
 "Syntax plugins
 "Bundle "gitorious.org/vim-for-qt-kde/vim-qmake.git"
@@ -99,6 +95,8 @@ Bundle 'https://github.com/godlygeek/tabular.git'
 "Bundle "vim-scripts/ctags.vim"
 "can't make it work correctly
 "Bundle "vim-scripts/SearchComplete"
+"Deprecated
+"Bundle "Lokaltog/vim-powerline"
 
 " NOTE: comments after Bundle command are not allowed..
 "
@@ -201,7 +199,7 @@ set t_Co=256
 "colorscheme solarized
 "set background=dark"light
 
-"Barras de estado
+"StatusBar
 set laststatus=2
 
 "For Programming
@@ -354,12 +352,12 @@ au Syntax * RainbowParenthesesLoadBraces
 "set rtp+=~/.vim/bundle/pywordcount/plugin/
 
 "wordcount
-map <Leader>wc :WordCount()<CR>
+"map <Leader>wc :WordCount()<CR>
 
 "For vim-powerline 
 let g:Powerline_symbols = 'fancy'
 
-"Status line
+"Status line Not necesary with new powerline plugin
 "set laststatus=2
 "set statusline=%F%m%r%h%w\ [%{&ff}]\ [%Y]\ [HEX=\%02.2B]\ [X=%04l\ Y=%03v]\ [LEN=%L]
 "set statusline=%F%m%r%h%w\ [%{&ff}]\ [wc:%{WordCount()}]\ [HEX=\%02.2B]\ [X=%04l\ Y=%03v]\ [LEN=%L]
