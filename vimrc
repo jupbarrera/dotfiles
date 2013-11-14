@@ -36,7 +36,7 @@ Bundle "edsono/vim-matchit"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "kien/rainbow_parentheses.vim"
 Bundle "tpope/vim-unimpaired"
-Bundle 'https://github.com/kshenoy/vim-signature'
+Bundle 'kshenoy/vim-signature'
 Bundle "airblade/vim-gitgutter"
 Bundle 'tpope/vim-fugitive'
 Bundle "vim-scripts/vimwiki"
@@ -45,37 +45,24 @@ Bundle "gerw/vim-latex-suite"
 Bundle 'danro/rename.vim'
 Bundle "thanthese/Tortoise-Typing"
 Bundle "benmills/vimux"
+Bundle 'tpope/vim-markdown'
+Bundle 'suan/vim-instant-markdown'
+Bundle "Lokaltog/powerline"
+Bundle 'godlygeek/tabular'
 "Bundle "mattn/calendar-vim"
 "Bundle "sven-strothoff/vim-clang_doxygen"
 "Bundle 'erisian/pywordcount'
 "Bundle "tpope/vim-tbone"
-"
-"improve looks
 "Bundle "altercation/vim-colors-solarized"
-Bundle "Lokaltog/powerline"
-Bundle 'https://github.com/godlygeek/tabular.git'
-
-"check how to use
-"Bundle 'https://github.com/vim-scripts/YankRing.vim'
-
-"Syntax plugins
 "Bundle "gitorious.org/vim-for-qt-kde/vim-qmake.git"
-"Bundle 'tpope/vim-markdown'
-"Bundle 'suan/vim-instant-markdown'
-"Bundle 'https://github.com/stephenmckinney/vim-solarized-powerline.git'
+"Bundle 'stephenmckinney/vim-solarized-powerline'
 "Bundle 'jtratner/vim-flavored-markdown'
-
-"command-t is similar 
 "Bundle "kien/ctrlp.vim"
-"similar to vim-signature
 "Bundle "vim-scripts/ShowMarks"
-"mmm implement somethig with ultisnips
 "Bundle "vim-scripts/doxygen-support.vim"
 "Bundle "vim-scripts/DoxygenToolkit.vim"
-"too slow
 "Bundle "vim-scripts/TwitVim"
 "Bundle "kakkyz81/evervim"
-"Not using
 "Bundle "vim-scripts/Arduino-syntax-file"
 "Bundle "sgeb/vim-matlab"
 "Bundle "vim-scripts/octave.vim--"
@@ -83,13 +70,10 @@ Bundle 'https://github.com/godlygeek/tabular.git'
 "Bundle "tpope/vim-surround"
 "Bundle "tpope/vim-rake"
 "Bundle "tpope/vim-speeddating"
-"seem like tagbar is better
 "Bundle "artemkin/taglist.vim"
-"clang_complete and ultisnips are better
 "Bundle "vim-scripts/c.vim"
 "Bundle "vim-scripts/OmniCppComplete"
 "Bundle "vim-scripts/ctags.vim"
-"can't make it work correctly
 "Bundle "vim-scripts/SearchComplete"
 "Deprecated
 "Bundle "Lokaltog/vim-powerline"

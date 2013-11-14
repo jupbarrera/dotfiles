@@ -1,4 +1,0 @@
-#!/bin/bash
-
-conky -c ~/.conky/.conkyrc_banner &
-conky -c ~/.conky/.conkyrc_todo &
