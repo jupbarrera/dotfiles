@@ -49,6 +49,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'suan/vim-instant-markdown'
 Bundle "Lokaltog/powerline"
 Bundle 'godlygeek/tabular'
+Bundle 'ivanov/vim-ipython'
 "Bundle "mattn/calendar-vim"
 "Bundle "sven-strothoff/vim-clang_doxygen"
 "Bundle 'erisian/pywordcount'
@@ -310,30 +311,30 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-"let g:word_count="<unknown>"
-"fun! WordCount()
-    "return g:word_count
-"endfun
-"fun! UpdateWordCount()
-    "let s = system("wc -w ".expand("%p"))
-    "let parts = split(s, ' ')
-    "if len(parts) > 1
-        "let g:word_count = parts[0]
-    "endif
-"endfun
+let g:word_count="<unknown>"
+fun! WordCount()
+    return g:word_count
+endfun
+fun! UpdateWordCount()
+    let s = system("wc -w ".expand("%p"))
+    let parts = split(s, ' ')
+    if len(parts) > 1
+        let g:word_count = parts[0]
+    endif
+endfun
 
-"augroup WordCounter
-    "au! CursorHold * call UpdateWordCount()
-    "au! CursorHoldI * call UpdateWordCount()
-"augroup END
+augroup WordCounter
+    au! CursorHold * call UpdateWordCount()
+    au! CursorHoldI * call UpdateWordCount()
+augroup END
 
-"" how eager are you? (default is 4000 ms)
-"set updatetime=500
+" how eager are you? (default is 4000 ms)
+set updatetime=500
 
 "set rtp+=~/.vim/bundle/pywordcount/plugin/
 
 "wordcount
-"map <Leader>wc :WordCount()<CR>
+map <Leader>wc :echom WordCount()<CR>
 
 "For vim-powerline 
 let g:Powerline_symbols = 'fancy'

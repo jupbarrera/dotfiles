@@ -70,10 +70,13 @@ export PATH=${PATH}
 
 #set PYTHONPATH
 PYTHONPATH=$PYTHONPATH:$HOME/pro/python/pynaoqi/ #NAO python path 
+PYTHONPATH=$PYTHONPATH:$HOME/pro/python/naoTest #my nao project 
 PYTHONPATH=$PYTHONPATH:/home/jupbarrera/.vim/bundle/pywordcount/python/pywordcount/ 
 #PYTHONPATH=$PYTHONPATH:$HOME/bin/clang/bindings/python #Clang python bindings
 
 export PYTHONPATH=${PYTHONPATH}
+
+stty stop undef # to unmap ctrl-s
 
 # universal tarball extractor extract is better
 #extr () {
