@@ -18,14 +18,12 @@ Bundle 'gmarik/vundle'
 
 "original repos on github
 
-"Make vim a c++ IDE
-
 Bundle "majutsushi/tagbar"
 "Bundle "Rip-Rip/clang_complete"
 "Bundle "Valloric/YouCompleteMe"
 "Bundle "FooBarrior/clavim"
+Bundle 'mileszs/ack.vim'
 Bundle 'wincent/Command-T'
-"Bundle 'erisian/pywordcount'
 Bundle "SirVer/ultisnips"
 Bundle 'tpope/vim-obsession'
 Bundle 'tpope/vim-dispatch'
@@ -35,24 +33,22 @@ Bundle "scrooloose/nerdtree"
 Bundle "ervandew/supertab"
 Bundle "myusuf3/numbers.vim"
 Bundle "edsono/vim-matchit"
-"Bundle "tpope/vim-tbone"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "kien/rainbow_parentheses.vim"
-"Bundle "sven-strothoff/vim-clang_doxygen"
 Bundle "tpope/vim-unimpaired"
 Bundle 'https://github.com/kshenoy/vim-signature'
-"Bundle "sven-strothoff/vim-clang_doxygen"
-
-"latex, python, others
 Bundle "airblade/vim-gitgutter"
 Bundle 'tpope/vim-fugitive'
 Bundle "vim-scripts/vimwiki"
-"Bundle "mattn/calendar-vim"
 Bundle "pyflakes/pyflakes"
 Bundle "gerw/vim-latex-suite"
 Bundle 'danro/rename.vim'
 Bundle "thanthese/Tortoise-Typing"
 Bundle "benmills/vimux"
+"Bundle "mattn/calendar-vim"
+"Bundle "sven-strothoff/vim-clang_doxygen"
+"Bundle 'erisian/pywordcount'
+"Bundle "tpope/vim-tbone"
 "
 "improve looks
 "Bundle "altercation/vim-colors-solarized"
@@ -107,6 +103,7 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 " Remapping Esc key!!
 :imap jk <Esc>
+:imap kj <Esc>
 
 "Some config
 set history=50          " keep 50 lines of command line history
