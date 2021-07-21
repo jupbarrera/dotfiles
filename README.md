@@ -1,6 +1,8 @@
 dotfiles
 ======
 
+# Previous Conf
+
 My dotfiles configuration
 
 installation:
@@ -34,4 +36,19 @@ In order to make solarized colors to play well with vim
     $ ./install.sh
 
 Remember to create a new terminal session before executing install.sh
+
+# New Simplified Conf
+
+My dotfiles configuration
+
+Installation:
+
+    $ git clone git://github.com/jupbarrera/dotfiles.git
+
+Create symlinks:
+   
+    $ ln -s ~/dotfiles/vimrc ~/.vimrc
+    $ ln -s ~/dotfiles/bashrc ~/.bashrc
+    $ ln -s ~/dotfiles/bash_aliases ~/.bash_aliases
+    $ ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 
