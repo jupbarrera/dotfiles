@@ -1,7 +1,12 @@
+[user]
+	name = Jupiter Barrera (jupbarrera)
+	email = jupir5@gmail.com
+[apply]
+	whitespace = nowarn
 [core]
-  editor = vim
-  autocrlf = false
-  safecrlf = false
+    editor = vim
+	autocrlf = false
+	safecrlf = false
 [alias]
   co = checkout
   ci = commit
@@ -11,5 +16,3 @@
   type = cat-file -t
   dump = cat-file -p
   wdiff = diff --color-words
-  wow = log --all --graph --decorate --oneline --simplify-by-decoration
-  log5 = log -5 --pretty --oneline
