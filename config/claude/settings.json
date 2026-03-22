@@ -55,7 +55,7 @@
     "command": "~/.claude/statusline.sh"
   },
   "enabledPlugins": {
-    "laravel-simplifier@laravel": true,
+    "laravel-simplifier@laravel": true
   },
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
